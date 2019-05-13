@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>史上最满大二下课程表</title>
+  <style>
+    table {
+      width: calc(100vmin-100px);
+      height: calc(100vmin-100px);
+    }
+
+    td {
+      text-align: center;
+      font-size: 12px;
+      width: 12.5%;
+      height: 12.5%;
+    }
+    tr,td,th{
+                width: 12.5%;
+                height: 12.5%;
+                border: 4px solid rgb(233, 230, 230);
+                }
+      
+            .w {background-color: rgb(197, 247, 197); }
+            .s { background-color: rgb(252, 208, 215);}
+            .x {background-color: rgb(250, 234, 187);}
+            .y {background-color: rgb(192, 239, 245);}
+            .m {background-color: rgb(218, 209, 171); }
+            .n {background-color: rgb(111, 159, 231); }
+            .b {background-color: rgb(111, 217, 231); }
+            .o {background-color: rgb(152, 177, 243); }
+
+
+    td:hover {
+      position: relative;
+      top: 3px;
+      left: 3px;
+      box-shadow: 9px 13px 18px 0px;
+    }
+
+    .diag-main {
+      font-weight: 900;
+    }
+
+    .diag-back {
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+  <table border=1 cellspacing=0 align=center width=90%>
+    <caption>史上最满周超级课程表</caption>
+    <caption>信息专业大二&nbsp;第二学期</caption>
+    <tr>
+      <th>5月</th>
+      <th>周一</th>
+      <th>周二</th>
+      <th>周三</th>
+      <th>周四</th>
+      <th>周五</th>
+      <th>周六</th>
+      <th>周日</th>
+    </tr>
+    <tr>
+      <td align=center>1<br>08:20<br>09：05</td>
+      <td rowspan=2   class="w"align=center>web技<br>术开发<br>@C411<br>教室</td>
+      <td rowspan=2    class="s"align=center>西方文<br>化简史<br>@C311<br>教室</td>
+      <td rowspan=2     class="x"align=center>管理信<br>息系统<br>@C105<br>教室</td>
+      <td rowspan=2 class="y"align=center>运营管<br>理<br>@B405<br>教室</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td align=center>2<br>09：15<br>10:00</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+
+
+    </tr>
+
+    <tr>
+      <td align=center>3<br>10:20<br>11:05</td>
+      <td rowspan=2 class="m" align=center>毛泽东<br>思想和<br>中国特<br>色社会<br>主义理<br>论体系<br>概论<br>@A120<br>教室</td>
+      <td rowspan=2  class="n"align=center>管理科<br>学与基<br>础<br>@C411<br>教室</td>
+      <td rowspan=2 class="m" align=center>毛泽东<br>思想和<br>中国特<br>色社会<br>主义理<br>论体系<br>概论<br>@A120<br>教室</td>
+      <td rowspan=2 class="n" align=center>管理科<br>学与基<br>础<br>@C411<br>教室</td>
+      <td rowspan=2 class="y" align=center>运营管<br>理<br>@B405<br>教室</td>
+      <td rowspan=2 class="o"align=center>数学建<br>模入门<br>@B117<br>教室</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td align=center>4<br>11:15<br>12:00</td>
+      <td>&nbsp;</td>
+    </tr>
+
+
+
+    <tr>
+      <td align=center>5<br>14:00<br>14:45</td>
+      <td rowspan=2 class="x" align=center>管理信<br>息系统<br>@C105<br>教室</td>
+      <td rowspan=2  class="w"align=center>形势与<br>政策<br>@C123<br>教室</td>
+      <td rowspan=2 class="s" align=center>会计学<br>@B101<br>教室</td>
+      <td rowspan=2  class="x"align=center>体育<br>（4）</td>
+      <td rowspan=2  class="m"align=center>毛泽东<br>思想和<br>中国特<br>色社会<br>主义理<br>论体系<br>概论<br>@A120<br>教室</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td align=center>6<br>14:55<br>15:40</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+      <td align=center>7<br>16:00<br>16:45</td>
+      <td rowspan=2  class="b"align=center>电子商<br>务<br>@B303<br>教室</td>
+      <td rowspan=2  class="y"align=center>大型数<br>据库技<br>术<br>@管理学院<br>机房</td>
+      <td rowspan=2 class="w"align=center>学生会<br>值班<br>@管理学院<br>办公室</td>
+      <td rowspan=2 class="s"align=center>会计学<br>@B101<br>教室</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+
+    </tr>
+
+    <tr>
+      <td align=center>8<br>16:55<br>17:40</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+
+
+
+
+  </table>
+</body>
+
+</html>

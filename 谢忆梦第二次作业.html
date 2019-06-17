@@ -1,0 +1,156 @@
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<head>
+    <style>
+        body {
+            background-image: url(timg2.jpg);
+        }
+
+        td,
+        tr {
+            text-align: center;
+            font-size: 2vmin;
+            -webkit-border-radius: 25px;
+            border-radius: 25px;
+            border: 1px solid rgba(127, 125, 156, 0.301)
+                /*定义行列样式*/
+        }
+
+        td:hover {
+            position: relative;
+            top: -2px;
+            left: -2px;
+            box-shadow: 3px 3px 18px rgb(90, 77, 83);
+            /*鼠标移动幻影，即加阴影*/
+
+
+        }
+
+        .cell {
+            height: 4em;
+            width: 11em;
+            text-align: center;
+            -webkit-border-radius: 25px;
+            border-radius: 25px;
+            /*定义样式*/
+        }
+
+        .cell>.detail {
+            display: none;
+            /*cell下的类名叫detail元素 ，即表格隐藏*/
+
+        }
+
+        .cell>.detail.open {
+            display: block;
+            /*显示内表格的元素*/
+            position: absolute;
+            height: 5em;
+            width: 11em;
+            -webkit-border-radius: 25px;
+            border-radius: 25px;
+            background-color:rgba(248, 243, 172, 0.925);
+
+        }
+
+
+        .kkk {
+            text-align: center;
+            background-color: 1px solid rgb(236, 180, 224);
+            /*标题颜色样式但是失败liao*/
+
+        }
+
+        .xym {
+            background-color: rgba(225, 204, 226, 0.925);
+        }
+
+        /*开始的第一行第一列的颜色样式*/
+    </style>
+</head>
+
+<body>
+    <h3 class="kkk"><i> 苦逼信息大二之史上超满课表</i></h3>
+    <table id="grid" align="center" bgcolor="white">
+
+    </table>
+
+    <script>
+        let i = -1;
+        let j = -1;
+        let arrY = [" ", "星期一", "星期二", "星期三", "星期四", "星期五", "第一节<br/>8:20~10:00", "Web应用开发技术", "西方文化简史", "管理信息系统",
+            "运营管理", " ", "第二节<br/>10:20~12:00", "毛概", "管理科学基础", "毛概", "管理科学基础", "运营管理", "第三节<br/>14:00~15:40", "管理信息系统", "形势与政策",
+            "会计学", "体育", "毛概", "第四节<br/>16:00~17:40", "电子商务", "数据库管理及应用", " ", "会计学", " "];/*创建外层表格*/
+
+        let arrX = ["welcome to the timetable by xym", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "上课时间到<br/>滚去上课啦 ",
+            "第一公共教学楼C411 任课教师：吕成功 周数：1~15周", "第一公共教学楼C311 任课教师：张金柱 周数：1~17周",
+            "第一公共教学楼C105 任课教师：刘烨 周数：1~15周（单周）", "第一公共教学楼B405 任课教师：刘亮 周数：1~15周（单周）",
+            "嗨的一批", "上课时间到<br/>滚去上课啦", "西区第一公共教学楼A120 任课教师：顾洪英 周数：1~16周",
+            "第一公共教学楼C411 任课教师：赵方方 周数：3~17周", "第一公共教学楼A120 任课教师：顾洪英 周数：1~16周",
+            "第一公共教学楼C411 任课教师：赵方方 周数：3~17周", "第一公共教学楼B405 任课教师：刘亮 周数：1~15周（单周）", "上课时间到<br/>滚去上课啦 ",
+            "第一公共教学楼C105 任课教师：刘烨 周数：1~15周（单周）", "第一公共教学楼C123 任课教师：邵夏 李坤 周数：5~7周",
+            "第一公共教学楼B101 任课教师：姜红 周数：1~17周（单周）", "体育馆 任课教师：芳老师 周数：1~16周",
+            "第一公共教学楼C411 任课教师：顾洪英 周数：1~16周", " 上课时间到<br/>滚去上课啦", "第一公共教学楼B303 任课教师：张亮 周数：3~17周",
+            "第一公共教学楼C109 任课教师：吴君 周数：1~15周", "没有错，我要学生会值班！", "第一公共教学楼B101 任课教师：姜红 周数：1~17周",
+            "嗨的一批"]/*创建相对应的内层表格*/
+        let f = function (event) {
+            console.log(i, j, i * 6 + j);
+        }
+        let tblEl = document.getElementById('grid');/*创建表格*/
+        for (let i = 0; i < 5; i++) {
+            let trEl = document.createElement('tr');
+            for (let j = 0; j < 6; j++) {
+                let tdEl = document.createElement('td');
+                let divEl = document.createElement('div')
+                divEl.className = 'cell';                     /*  div元素采取cell的样式 */
+
+
+                let detailDivEl = document.createElement('div');
+                detailDivEl.className = 'detail';
+                detailDivEl.innerHTML = arrX[i * 6 + j];
+                detailDivEl.onmouseout = function (event) {
+                    let names = detailDivEl.className.split(' ');
+                    names = names.filter((x) => x != 'open')
+                    detailDivEl.className = names.join(' ');/*内层表格的内容循环，给予*/
+                }
+                divEl.append(detailDivEl);
+
+                let briefDivEl = document.createElement('div');
+                briefDivEl.innerHTML = arrY[i * 6 + j];
+                divEl.append(briefDivEl);                    /*外层表格的内容循环，给予，*/
+
+
+
+                tdEl.onclick = function (event) {             /*点击显示内层表格细节*/
+                    let names = detailDivEl.className.split(' ');
+
+                    if (names.indexOf('open') >= 0) {
+                        names = names.filter((x) => x != 'open')
+                    } else {
+                        names.push('open');
+                    }
+
+                    console.log(names);
+
+                    detailDivEl.className = names.join(' ');
+
+
+                };
+
+
+                let classNames = [];
+                if (i == 0 || j == 0)
+                    classNames.push('xym');  /*如果满足if条件，将xym样式给classnames*/
+                tdEl.className = classNames.join(' ');
+
+                tdEl.append(divEl);
+                trEl.append(tdEl);
+            }
+            tblEl.append(trEl);
+        }
+
+    </script>
+</body>
+
+</html>
